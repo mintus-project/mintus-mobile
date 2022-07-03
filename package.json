@@ -1,0 +1,30 @@
+{
+  "name": "mintus-mobile",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@vueuse/core": "^8.7.5",
+    "pinia": "^2.0.14",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.1",
+    "@iconify-json/carbon": "^1.1.5",
+    "@iconify/vue": "^3.2.1",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "naive-ui": "^2.30.8",
+    "prettier": "2.7.1",
+    "unocss": "^0.39.3",
+    "unplugin-auto-import": "^0.8.8",
+    "unplugin-vue-components": "^0.19.6",
+    "vite": "^2.9.9"
+  }
+}
