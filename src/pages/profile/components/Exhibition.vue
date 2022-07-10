@@ -27,7 +27,7 @@ const handleChooseAnExhibition = (e) => {
 </script>
 
 <template>
-  <div class="my-24 flex flex-col items-center">
+  <div class="my-20 flex flex-col items-center">
     <div class="flex gap-2" @click="handleChooseAnExhibition">
       <MUTag :active="exhibitionOption === 'NFT'">
         NFT

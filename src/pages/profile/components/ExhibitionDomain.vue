@@ -13,7 +13,7 @@ const domains = ref([
 
 <template>
   <div class="overflow-x-auto shadow rounded-xl">
-    <table class="table w-[40rem] text-sm">
+    <table class="table w-[80vw] text-xs">
       <tbody>
         <tr v-for="(item, index) in domains" :key="index">
           <th>{{ item }}</th>

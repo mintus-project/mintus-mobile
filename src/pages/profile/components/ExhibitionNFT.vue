@@ -33,7 +33,7 @@ const nfts = ref([
 </script>
 
 <template>
-  <div class="grid grid-cols-4 gap-7">
+  <div class="grid grid-cols-2 gap-4">
     <template v-for="(item, index) in nfts" :key="index">
       <div class="avatar">
         <div class="w-[9.5rem] rounded-2xl border-4 border-white shadow-lg">
