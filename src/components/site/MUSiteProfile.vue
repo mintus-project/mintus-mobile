@@ -5,10 +5,9 @@ import MUFooter from './MUFooter.vue'
 
 <template>
   <div>
-    <MUNavbar class="fixed border-b border-[#F2F2F2]" />
+    <MUNavbar class="fixed" />
     <div class="min-h-screen flex flex-col">
-      <div class="w-full h-72 bg-[#F9F9F9]" />
-      <div class="flex-1 flex flex-col items-center mt-[-8.25rem]">
+      <div class="flex-1 flex flex-col items-center pt-30">
         <slot />
       </div>
       <MUFooter class="" />

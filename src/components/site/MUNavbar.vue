@@ -9,7 +9,7 @@
       class="text-3xl font-black text-[#5D5FEF] cursor-pointer"
       @click="$router.push('/')"
     >
-      <img class="h-10" src="@/assets/mintUs.svg">
+      <img class="h-8" src="@/assets/mintUs.svg">
     </span>
   </div>
 </template>

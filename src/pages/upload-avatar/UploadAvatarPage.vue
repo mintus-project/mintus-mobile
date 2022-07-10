@@ -1,4 +1,6 @@
 <script setup>
+const router = useRouter()
+
 const isUploadBtnLoading = ref(false)
 const onBeforeUpload = () => {
   isUploadBtnLoading.value = true
@@ -9,11 +11,11 @@ const onError = () => {
 }
 const onFinish = async (res) => {
   if (res) {
-    const name = res?.file?.name?.substring(0, res.file.name.lastIndexOf('.'))
+    // const name = res?.file?.name?.substring(0, res.file.name.lastIndexOf('.'))
     // const addr = await getOwner(name)
-    if (addr)
-      // router.push(`/profile/${addr}`)
-      alert('okkk')
+    // if (addr)
+    //   router.push(`/profile/${addr}`)
+    router.push('/profile/addr')
   }
 }
 </script>

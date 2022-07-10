@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 // Components
 import UploadAvatarPage from '../pages/upload-avatar/UploadAvatarPage.vue'
+import ProfilePage from '../pages/profile/ProfilePage.vue'
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     path: '/upload-avatar',
     name: 'UploadAvatarPage',
     component: UploadAvatarPage,
+  },
+  {
+    path: '/profile/:address',
+    name: 'ProfilePage',
+    component: ProfilePage,
   },
 ]
 const router = createRouter({
