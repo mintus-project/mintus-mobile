@@ -36,7 +36,7 @@ const onFinish = async (res) => {
         </template>
       </MUTitle>
 
-      <n-upload
+      <!-- <n-upload
         :show-file-list="false"
         accept=".png"
         action="https://mintus.link/api/picture_recognition/"
@@ -52,7 +52,10 @@ const onFinish = async (res) => {
         <MUButton :is-loading="isUploadBtnLoading">
           Browse file
         </MUButton>
-      </n-upload>
+      </n-upload> -->
+      <MUButton @click="$router.push('/profile/address')">
+        go to profile
+      </MUButton>
     </div>
   </MUSiteDynamicBackground>
 </template>
