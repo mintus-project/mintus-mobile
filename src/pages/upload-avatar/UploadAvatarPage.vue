@@ -1,6 +1,7 @@
 <script setup>
 import WalletConnect from '@walletconnect/client'
 import QRCodeModal from '@walletconnect/qrcode-modal'
+import { Wallet } from '@/services'
 
 const router = useRouter()
 
@@ -96,7 +97,7 @@ const connect = async () => {
       <MUButton @click="$router.push('/profile/address')">
         go to profile
       </MUButton>
-      <MUButton @click="connect">
+      <MUButton @click="Wallet.initWallet">
         connect to wallet
       </MUButton>
     </div>

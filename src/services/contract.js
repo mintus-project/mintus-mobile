@@ -15,7 +15,8 @@ export const initContract = () => {
   }
 }
 
-const contractObj = initContract()
+// const contractObj = initContract()
+const contractObj = {}
 
 export const register = async (avatarString, username, domains, addresses) => {
   try {
