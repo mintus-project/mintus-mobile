@@ -1,6 +1,4 @@
 <script setup>
-import { WalletService } from '@/services'
-
 const router = useRouter()
 
 const isUploadBtnLoading = ref(false)
@@ -57,9 +55,6 @@ const onFinish = async (res) => {
       </n-upload> -->
       <MUButton @click="$router.push('/profile/0xE54538f63f6d69201A41716248DBaF65186de1C4')">
         go to profile
-      </MUButton>
-      <MUButton @click="WalletService.getAccount">
-        connect to wallet
       </MUButton>
     </div>
   </MUSiteDynamicBackground>
