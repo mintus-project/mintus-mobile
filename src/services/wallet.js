@@ -36,9 +36,8 @@ export const getAccount = async () => {
   }
 }
 
-const Wallet = {
-  provider: {},
+const WalletService = {
   getAccount,
 }
 
-export default Wallet
+export default WalletService

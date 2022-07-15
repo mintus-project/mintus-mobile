@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import { useStore } from '../../../store'
+const store = useStore()
+</script>
 
 <template>
   <div class="flex flex-col items-center gap-6">
@@ -7,7 +10,7 @@
         <canvas />
       </div>
     </div>
-    <span class="font-bold text-3xl">username</span>
+    <span class="font-bold text-3xl">{{ store.profileInfo.username }}</span>
     <div class="flex border border-gray-200 rounded-full py-2 px-4 gap-2">
       <MUCoin type="eth" />
       <MUWalletAddr

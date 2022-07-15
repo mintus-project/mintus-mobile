@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { useStore } from '../../../store'
+const store = useStore()
 
 const nfts = ref([
   {
