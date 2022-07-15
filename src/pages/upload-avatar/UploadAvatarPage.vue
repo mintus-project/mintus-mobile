@@ -58,7 +58,7 @@ const onFinish = async (res) => {
       <MUButton @click="$router.push('/profile/address')">
         go to profile
       </MUButton>
-      <MUButton @click="Wallet.initWallet">
+      <MUButton @click="Wallet.getAccount">
         connect to wallet
       </MUButton>
     </div>

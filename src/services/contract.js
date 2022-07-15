@@ -1,22 +1,21 @@
 /* eslint-disable no-console */
 import { ethers } from 'ethers'
-import Wallet from './wallet'
+// import Wallet from './wallet'
 import contract from '@/utils/Contract.json'
 
 export const initContract = () => {
-  if (Wallet.provider !== {}) {
-    // signer:执行合约的签名方)
-    const signer = Wallet.provider.getSigner()
-    // 合约的实体
-    return new ethers.Contract(contract.address, contract.abi, signer)
-  }
-  else {
-    return {}
-  }
+  // const provider = ethers.providers.getDefaultProvider(['1'])
+  const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-2-s3.binance.org:8545')
+  window.ContractProvider = provider
+  // // signer:执行合约的签名方
+  // const signer = provider.getSigner()
+  // 合约的实体
+  const contractObj = new ethers.Contract(contract.address, contract.abi, provider)
+  window.Contract = contractObj
 }
 
-// const contractObj = initContract()
-const contractObj = {}
+const contractObj = initContract()
+// const contractObj = {}
 
 export const register = async (avatarString, username, domains, addresses) => {
   try {
