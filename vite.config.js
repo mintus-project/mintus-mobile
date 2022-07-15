@@ -6,9 +6,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
-import builtins from 'rollup-plugin-node-builtins'
-import globals from 'rollup-plugin-node-globals'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -46,26 +43,10 @@ export default defineConfig({
 
       },
     }),
-    { ...builtins({ crypto: true }), name: 'rollup-plugin-node-builtins' },
-    { ...globals(), name: 'rollup-plugin-node-globals' },
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      // Node.js global to browser globalThis
-      define: {
-        global: 'globalThis',
-      },
-      // Enable esbuild polyfill plugins
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true,
-        }),
-      ],
     },
   },
 })
