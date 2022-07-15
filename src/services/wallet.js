@@ -5,9 +5,9 @@ import { providers } from 'ethers'
 export const getAccount = async () => {
   try {
     const provider = new WalletConnectProvider({
-      infuraId: '774b1e4252de48c3997d66ac5f5078d8',
+      // infuraId: '774b1e4252de48c3997d66ac5f5078d8', // web3modal官方测试网的InfuraId
       rpc: {
-        1: 'https://rpc.ankr.com/eth',
+        // 1: 'https://rpc.ankr.com/eth',
         97: 'https://data-seed-prebsc-1-s1.binance.org:8545',
       },
     })
@@ -28,7 +28,6 @@ export const getAccount = async () => {
     // 会话断开连接
     provider.on('disconnect', (code, reason) => {
       console.log('disconnect: ', code, reason)
-      window.location.reload()
     })
   }
   catch (e) {
