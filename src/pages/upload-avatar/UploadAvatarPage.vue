@@ -1,6 +1,7 @@
 <script setup>
-const router = useRouter()
+import { ContractService } from '../../services'
 
+const router = useRouter()
 const isUploadBtnLoading = ref(false)
 const onBeforeUpload = () => {
   isUploadBtnLoading.value = true
@@ -10,12 +11,17 @@ const onError = () => {
   alert('failed')
 }
 const onFinish = async (res) => {
-  if (res) {
-    // const name = res?.file?.name?.substring(0, res.file.name.lastIndexOf('.'))
-    // const addr = await getOwner(name)
-    // if (addr)
-    //   router.push(`/profile/${addr}`)
-    router.push('/profile/addr')
+  try {
+    console.log(11111,res)
+    if (res) {
+      const name = res?.file?.name?.substring(0, res.file.name.lastIndexOf('.'))
+      const addr = await ContractService.getOwner(name)
+      if (addr)
+        router.push(`/profile/${addr}`)
+    }
+  }
+  catch (e) {
+    console.error('Upload: ', e)
   }
 }
 </script>

@@ -23,9 +23,16 @@ export const getRecord = async (address) => {
     addresses: res[3] ? JSON.parse(res[3]) : [],
   }
 }
+export const getOwner = async (avatarString) => {
+  if (window.Contract === undefined)
+    initContract()
+  const res = await window.Contract?.getOwner(avatarString)
+  return res
+}
 
 const ContractService = {
   getRecord,
+  getOwner,
 }
 
 export default ContractService
