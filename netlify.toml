@@ -4,7 +4,7 @@
 
 [build]
   publish = "dist"
-  command = "npm i && npm run build"
+  command = "npm i -D esbuild && npm i && npm run build"
 
 [[redirects]]
   from = "/*"
