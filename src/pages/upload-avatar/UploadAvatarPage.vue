@@ -10,11 +10,12 @@ const onError = () => {
   isUploadBtnLoading.value = false
   alert('failed')
 }
-const onFinish = async (res) => {
+const onFinish = async ({ file, event }) => {
+  isUploadBtnLoading.value = false
   try {
-    console.log(11111,res)
+    const res = JSON.parse(event?.target?.response)?.data?.result
     if (res) {
-      const name = res?.file?.name?.substring(0, res.file.name.lastIndexOf('.'))
+      const name = res.substring(0, res.lastIndexOf('.'))
       const addr = await ContractService.getOwner(name)
       if (addr)
         router.push(`/profile/${addr}`)
