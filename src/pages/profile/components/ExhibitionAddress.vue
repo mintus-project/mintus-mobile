@@ -1,37 +1,17 @@
 <script setup>
 import { useStore } from '../../../store'
 const store = useStore()
-// const addresses = ref([
-//   {
-//     coinType: 'ETH',
-//     address: '0x3a8195422dea3339c14b1b888629b3393bd02f44',
-//   },
-//   {
-//     coinType: 'ETH',
-//     address: '0x3a8195422dea3339c14b1b888629b3393bd02f44',
-//   },
-//   {
-//     coinType: 'ETH',
-//     address: '0x3a8195422dea3339c14b1b888629b3393bd02f44',
-//   },
-//   {
-//     coinType: 'ETH',
-//     address: '0x3a8195422dea3339c14b1b888629b3393bd02f44',
-//   },
-//   {
-//     coinType: 'ETH',
-//     address: '0x3a8195422dea3339c14b1b888629b3393bd02f44',
-//   },
-//   {
-//     coinType: 'ETH',
-//     address: '0x3a8195422dea3339c14b1b888629b3393bd02f44',
-//   },
-// ])
 </script>
 
 <template>
   <div class="overflow-x-auto shadow rounded-xl">
     <table class="table w-[80vw] text-xs">
+      <tbody
+        v-if="store.profileInfo.addresses.length === 0"
+        class="flex justify-center p-4 text-sm text-gray-300"
+      >
+        - Empty -
+      </tbody>
       <tbody>
         <tr v-for="(item, index) in store.profileInfo.addresses" :key="index">
           <th>{{ item.coinType }}</th>

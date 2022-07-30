@@ -1,21 +1,17 @@
 <script setup>
 import { useStore } from '../../../store'
 const store = useStore()
-// const domains = ref([
-//   'Domain111.eth',
-//   'Domain111.eth',
-//   'Domain111.eth',
-//   'Domain111.eth',
-//   'Domain111.eth',
-//   'Domain111.eth',
-//   'Domain111.eth',
-//   'Domain111.eth',
-// ])
 </script>
 
 <template>
   <div class="overflow-x-auto shadow rounded-xl">
     <table class="table w-[80vw] text-xs">
+      <tbody
+        v-if="store.profileInfo.domains.length === 0"
+        class="flex justify-center p-4 text-sm text-gray-300"
+      >
+        - Empty -
+      </tbody>
       <tbody>
         <tr v-for="(item, index) in store.profileInfo.domains" :key="index">
           <th>{{ item }}</th>
