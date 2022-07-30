@@ -15,10 +15,15 @@ const onFinish = async ({ file, event }) => {
   try {
     const res = JSON.parse(event?.target?.response)?.data?.result
     if (res) {
-      const name = res.substring(0, res.lastIndexOf('.'))
+      const name = res.substring(0, res.lastIndexOf('.')).toUpperCase()
       const addr = await ContractService.getOwner(name)
-      if (addr)
+      if (addr === '0x0000000000000000000000000000000000000000') {
+        state.content = 'upload'
+        throw new Error('No record was found.')
+      }
+      else {
         router.push(`/profile/${addr}`)
+      }
     }
   }
   catch (e) {
@@ -60,7 +65,7 @@ const onFinish = async ({ file, event }) => {
           Browse file
         </MUButton>
       </n-upload>
-      <MUButton @click="$router.push('/profile/0xE54538f63f6d69201A41716248DBaF65186de1C4')">
+      <MUButton @click="$router.push('/profile/0xd83039ff4b0d7022281769edb509b32f6c390867')">
         go to profile
       </MUButton>
     </div>

@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     MUTag: typeof import('./src/components/common/MUTag.vue')['default']
     MUTitle: typeof import('./src/components/typography/MUTitle.vue')['default']
     MUWalletAddr: typeof import('./src/components/common/MUWalletAddr.vue')['default']
+    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NUpload: typeof import('naive-ui')['NUpload']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
