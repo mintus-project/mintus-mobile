@@ -5,6 +5,8 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
+import { chunkSplitPlugin } from 'vite-plugin-chunk-split'
+import legacy from '@vitejs/plugin-legacy'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
@@ -42,6 +44,12 @@ export default defineConfig({
         'mu-tag-active': 'bg-[#D7D8FC] border-[#D7D8FC] text-[#5D5FEF]',
 
       },
+    }),
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+    }),
+    chunkSplitPlugin({
+      strategy: 'unbundle',
     }),
   ],
   resolve: {
