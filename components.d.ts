@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     MUCoin: typeof import('./src/components/common/MUCoin.vue')['default']
     MUFooter: typeof import('./src/components/site/MUFooter.vue')['default']
     MUIconButton: typeof import('./src/components/common/MUIconButton.vue')['default']
+    MULoading: typeof import('./src/components/common/MULoading.vue')['default']
     MUNavbar: typeof import('./src/components/site/MUNavbar.vue')['default']
     MUSiteDynamicBackground: typeof import('./src/components/site/MUSiteDynamicBackground.vue')['default']
     MUSiteProfile: typeof import('./src/components/site/MUSiteProfile.vue')['default']

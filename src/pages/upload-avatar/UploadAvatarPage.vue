@@ -65,7 +65,7 @@ const onFinish = async ({ file, event }) => {
           Browse file
         </MUButton>
       </n-upload>
-      <MUButton @click="$router.push('/profile/0xd83039ff4b0d7022281769edb509b32f6c390867')">
+      <MUButton @click="$router.push('/profile/0xE54538f63f6d69201A41716248DBaF65186de1C4')">
         go to profile
       </MUButton>
     </div>
